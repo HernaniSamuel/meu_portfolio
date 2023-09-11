@@ -1,0 +1,19 @@
+.ir_container{
+    width:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ir_title{
+    font-size: 300%;
+}
+
+.ir_paragraph{
+    text-align: justify;
+    width: 50%;
+    font-size: 1.3em;
+}

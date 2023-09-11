@@ -8,11 +8,29 @@
 
 .software{
     font-family: monospace;
+    font-size: 9vw;
+    text-transform: uppercase;
+
+}
+
+.engineer{
+    font-family: monospace;
 
     width: 8ch;
     white-space: nowrap;
     overflow: hidden;
     animation: typing 2s steps(8);
-    font-size: 6vw;
+    font-size: 9vw;
     text-transform: uppercase;
+
+}
+
+.banner_container{
+    width:50%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
