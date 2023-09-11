@@ -8,6 +8,7 @@ export default function App() {
     <div className="app">
       <Header/>
       <Hero/>
+      <h1>Próxima atualização em 15/09/2023</h1>
     </div>
   )
 }

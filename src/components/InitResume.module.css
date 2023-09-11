@@ -17,3 +17,18 @@
     width: 50%;
     font-size: 1.3em;
 }
+
+@media screen and (max-width:992px) {
+    .ir_container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .ir_title{
+        font-size: 10vw;
+    }
+    .ir_paragraph{
+        width: 100%;
+        padding:5px;
+    }
+}

@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between;
 
-    background-image: url('../images/autism_background.png');
+    background-color: rgb(2, 17, 82);
     background-size: cover;
     padding:10px;
     position: fixed;

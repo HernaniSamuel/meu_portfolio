@@ -13,7 +13,7 @@ export default function Header(){
 
     return(
         <header className={styles.header}>
-            <img className={styles.img_logo} src={logo} alt="Um hexágono cor de mel com as letras HS centralizadas"/>
+            <a href="#"><img className={styles.img_logo} src={logo} alt="Um hexágono cor de mel com as letras HS centralizadas"/></a>
             <nav ref={navRef} className={styles.nav}>
                 <a href="#">Início</a>
                 <a href="#">Projetos</a>
