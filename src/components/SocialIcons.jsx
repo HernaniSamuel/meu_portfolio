@@ -37,8 +37,8 @@ export default function SocialIcons(){
 
     return(
         <div className={styles.social_container}>
-            <a href="#"><abbr title="Abrir LinkedIn em outra aba"><AiOutlineLinkedin/></abbr></a>
-            <a href="#"><abbr title="Abrir GitHub em outra aba"><AiOutlineGithub/></abbr></a>
+            <a href="https://www.linkedin.com/in/hernanisamueldiniz/" target='_blank'><abbr title="Abrir LinkedIn em outra aba"><AiOutlineLinkedin/></abbr></a>
+            <a href="https://github.com/HernaniSamuel" target='_blank'><abbr title="Abrir GitHub em outra aba"><AiOutlineGithub/></abbr></a>
             <button
              onClick={copyToClipboard}
              onMouseOver={handleMouseOver}
