@@ -1,0 +1,25 @@
+.projects_container{
+    padding-top: 90px;
+    height:200vh;
+}
+
+.projects_title{
+    font-size: 5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(2, 17, 82);
+}
+
+.flex1, .flex2{
+    display: flex;
+    margin-top: 50px;
+}
+
+@media screen and (max-width:992px){
+    
+    .flex1, .flex2{
+        display: flex;
+        flex-direction: column;
+    }
+}
