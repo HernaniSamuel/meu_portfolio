@@ -17,8 +17,9 @@ export default function Header(){
             <nav ref={navRef} className={styles.nav}>
                 <ul className={styles.ul}>
                     <li className={styles.li}><a href="#">Início</a></li>
-                    <li className={styles.li}><a href="#">Projetos</a></li>
-                    <li className={styles.li}><a href="#">Sobre mim</a></li>
+                    <li className={styles.li}><a href="#projects">Projetos</a></li>
+                    <li className={styles.li}><a href="#Habilidades">Habilidades</a></li>
+                    <li className={styles.li}><a href="#sobre">Sobre mim</a></li>
                     <li className={styles.li}>
                         <button onClick={showNavBar} className={styles.nav_close_button}>
                             <FaTimes/>

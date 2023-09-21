@@ -14,7 +14,7 @@ import WorldTablet from '../images/world_tablet.jpg'
 
 export default function Projects(){
     return(
-        <section className={styles.projects_container}>
+        <section className={styles.projects_container} id='projects'>
             <h1 className={styles.projects_title}>Top 3 projetos</h1>
             <div className={styles.flex1}>
                 <ProjectView nome="Meu Portfólio"

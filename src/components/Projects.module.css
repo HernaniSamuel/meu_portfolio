@@ -17,9 +17,12 @@
 }
 
 @media screen and (max-width:992px){
-    
+    .projects_container{
+        height: auto;
+    }
     .flex1, .flex2{
         display: flex;
         flex-direction: column;
     }
+
 }

@@ -1,7 +1,8 @@
 .mim_container{
-    height: 100vh;
+    height: auto;
     text-align: center;
     padding-top: 90px;
+    color: rgb(2, 17, 82);
 }
 
 .title{
@@ -12,4 +13,16 @@
 .mim_container > p{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.3em;
+    width:50%;
+    margin: 25px auto;
+    text-align: justify;
+}
+
+
+@media screen and (max-width:992px){
+    .mim_container > p{
+        width:100%;
+        padding:10px 30px;
+        margin:5px;
+    }
 }
