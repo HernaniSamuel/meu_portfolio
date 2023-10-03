@@ -11,3 +11,13 @@ body{
 html{
   scroll-behavior: smooth;
 }
+
+::-webkit-scrollbar{
+  background-color: transparent;
+  width:5px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: rgb(2, 17, 82);
+  width:5px;
+}
