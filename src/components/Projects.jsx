@@ -1,8 +1,8 @@
 import styles from './projects.module.css'
 import ProjectView from './projectView'
 
-import celular from '../images/TaskCell.jpg'
-import tablet from '../images/TaskTablet.jpg'
+import celular from '../images/NoteCell.jpg'
+import tablet from '../images/NoteTablet.jpg'
 
 import taroCell from '../images/taro_cell.jpg'
 import taroTablet from '../images/taro_tablet.jpg'
@@ -16,11 +16,11 @@ export default function Projects(){
         <section className={styles.projects_container} id='projects'>
             <h1 className={styles.projects_title}>Top 3 projetos</h1>
             <div className={styles.flex1}>
-                <ProjectView nome="Task Master"
+                <ProjectView nome="Lista de Tarefas"
                 urlCell={celular}
                 urlTablet={tablet}
-                urlProject='https://todo-flask-host-test.onrender.com/'
-                stackIcons="Flask, HTML, CSS"/>
+                urlProject='https://lista-de-tarefas-yi7q.onrender.com/login?next=%2F'
+                stackIcons="Flask, HTML, Bootstrap (obs: demora cerca de 1 minuto para abrir)"/>
 
                 <ProjectView nome="Tarô Oficial"
                 urlCell={taroCell}
