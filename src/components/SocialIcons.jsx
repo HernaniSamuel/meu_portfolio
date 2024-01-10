@@ -1,5 +1,5 @@
 import styles from './SocialIcons.module.css'
-import curriculo from '../../public/Curriculo_HernaniSamuel.pdf'
+import curriculo from '/src/Curriculo_HernaniSamuel.pdf'
 
 import { AiOutlineLinkedin, AiOutlineGithub, AiOutlineMail, AiOutlineFile, AiOutlineCopy } from 'react-icons/ai'
 import { VscVerified } from 'react-icons/vsc'
