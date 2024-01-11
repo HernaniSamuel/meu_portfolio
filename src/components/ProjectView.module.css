@@ -42,4 +42,8 @@
         width: 50vw;
         height: auto;
     }
+    .text{
+        flex-direction: column;
+        gap: 10px;
+    }
 }
