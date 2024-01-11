@@ -25,6 +25,9 @@ projects_container{
         display: flex;
         flex-direction: column;
     }
+    .flex2{
+        margin-top: 0px;
+    }
     .projects_title{
         font-size: 5vh;
     }
