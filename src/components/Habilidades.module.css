@@ -3,7 +3,7 @@
     font-family: arial;
     color: rgb(2, 17, 82);
 
-    height:auto;
+    min-height:100vh;
 
     text-align: center;
 }
@@ -45,6 +45,7 @@
 .skills ul li::before{
     content:'✔️'
 }
+
 
 @media screen and (max-width: 768px){
     .skills ul{
