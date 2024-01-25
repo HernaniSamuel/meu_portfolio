@@ -1,0 +1,49 @@
+.project_view_container{
+    padding:10px;
+    width:50vw;
+    text-align: center;
+}
+
+.celular{
+    height:40vh;
+    margin:10px;
+}
+.tablet{
+    height:60vh;
+    margin:10px;
+}
+
+.name{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(2, 17, 82)
+}
+
+.text{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.stacks{
+    color:rgb(2, 17, 82);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width:992px){
+    .project_view_container{
+        width: 100vw;
+        margin-bottom: 40px;
+    }
+    .celular{
+        width: 20vw;
+        height: auto;
+    }
+    .tablet{
+        width: 50vw;
+        height: auto;
+    }
+    .text{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
