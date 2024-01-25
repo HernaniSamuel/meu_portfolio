@@ -1,4 +1,4 @@
-import styles from '/home/hernani/PycharmProjects/meu_portfolio/src/components/Projects.module.css'
+import styles from './Projects.module.css'
 
 import ProjectView from "./ProjectView.jsx"
 import Live from "./Live.jsx"
