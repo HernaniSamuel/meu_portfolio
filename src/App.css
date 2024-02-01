@@ -6,6 +6,12 @@
 
 body{
   overflow-x: hidden;
+
+  background-image: url('src/images/main_bg.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 html{
