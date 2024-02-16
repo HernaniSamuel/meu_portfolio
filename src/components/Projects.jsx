@@ -25,20 +25,20 @@ export default function Projects(){
                 urlCell={LocadoraPhone}
                 urlTablet={LocadoraTablet}
                 urlProject='https://locadora-de-veiculos.onrender.com/'
-                stackIcons={[<Live/>, <span>(Obs: demora cerca de 1 minuto para abrir)</span>]}/>
+                stackIcons="Flask & Bootstrap (Obs: demora cerca de 1 minuto para abrir)"/>
 
             <ProjectView nome="Flask Market"
                 urlCell={MarketPhone}
                 urlTablet={MarketTablet}
                 urlProject='https://flask-market-s9d9.onrender.com/'
-                stackIcons="Flask, HTML, Bootstrap (obs: demora cerca de 1 minuto para abrir)"/>
+                stackIcons="Flask & Bootstrap (obs: demora cerca de 1 minuto para abrir)"/>
             </div>
             <div className={styles.flex2}>
             <ProjectView nome="Lista de Tarefas"
                 urlCell={TodoPhone}
                 urlTablet={TodoTablet}
                 urlProject='https://lista-de-tarefas-yi7q.onrender.com/login?next=%2F'
-                stackIcons="Flask, HTML, Bootstrap (obs: demora cerca de 1 minuto para abrir)"/>
+                stackIcons="Flask & Bootstrap (obs: demora cerca de 1 minuto para abrir)"/>
 
                 <ProjectView nome="World Graphics"
                 urlCell={WorldPhone}
