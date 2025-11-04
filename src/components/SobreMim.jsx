@@ -2,19 +2,31 @@ import styles from './SobreMim.module.css'
 
 export default function SobreMim(){
     return(
-        <section className={styles.mim_container} id='sobre'>
-            <h1 className={styles.title}>Sobre mim</h1>
-           <p className="about-text">
-            "O computador é uma extensão da minha mente." <br/>Foi com essa ideia que comecei a programar. Assistindo tutoriais de Python no YouTube, descobri algo mágico: poder construir minha própria lógica e vê-la funcionar fora da minha cabeça.
+        <section className={styles.mim_container} id='about'>
+          <h1 className={styles.title}>About Me</h1>
+          <p className="about-text">
+            <span className={styles.highlight}>
+              I'm a software engineer passionate about building solutions that solve real problems.
+            </span><br/>
+            {' '}Since 2020, I've been developing applications using Python, React, and modern web technologies —
+            turning ideas into functional systems.
             <br /><br />
-            Para mim, programar não é trabalho - é diversão. É como jogar um jogo onde eu mesmo crio as regras, enfrento os desafios (bugs!) e celebro cada vitória (código funcionando).
+            My journey started with Python tutorials on YouTube, where I discovered the power of
+            creating my own logic and bringing it to life through code. That curiosity evolved into
+            technical expertise through my Software Engineering degree and hands-on projects.
             <br /><br />
-            Essa paixão me levou à Engenharia de Software, onde transformei curiosidade em conhecimento técnico. Hoje, com diploma em mãos e projetos como o MineInvest no portfólio, busco levar essa mesma energia para ambientes profissionais.
+            I approach programming challenges with genuine enthusiasm — whether debugging complex issues
+            or architecting new features. My main project, MineInvest, showcases this: a full-stack
+            investment simulator that lets users test trading strategies with real historical market data.
             <br /><br />
-            Quero construir coisas que importam. Resolver problemas reais. E continuar aprendendo todos os dias.
+            I'm eager to bring this same energy and problem-solving mindset into professional environments,
+            building impactful software while continuously learning and growing.
             <br /><br />
-            Se você busca alguém que trata código como arte e debugging como desafio, vamos conversar.
-            </p>
-</section>
+            <strong>Tech Stack:</strong> Python • JavaScript • React • FastAPI • Bootstrap • Git<br />
+            <strong>Currently Learning:</strong> Rust for high-performance systems
+            <br /><br />
+            If you're looking for a developer who writes clean code and tackles challenges head-on, let's connect.
+          </p>
+        </section>
     )
 }

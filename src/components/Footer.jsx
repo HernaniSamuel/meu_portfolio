@@ -9,7 +9,7 @@ export default function Footer(){
                 <li><a href="https://www.linkedin.com/in/hernanisamueldiniz/">https://www.linkedin.com/in/hernanisamueldiniz/</a></li>
                 <li><a href="https://github.com/HernaniSamuel">https://github.com/HernaniSamuel</a></li>
             </ul>
-            <a href="#">Voltar ao início</a>
+            <a href="#">Back to the top</a>
         </footer>
     )
 }

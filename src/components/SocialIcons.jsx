@@ -31,20 +31,20 @@ export default function SocialIcons(){
                 setClicked(false)
             }, 3000)
         } catch (err) {
-            alert('erro ao copiar email, favor informar em hernanisamuel0@gmail.com')
+            alert('Error copying email, please report to hernanisamuel0@gmail.com')
         }
     }
 
     return(
         <div className={styles.social_container}>
-            <a href="https://www.linkedin.com/in/hernanisamueldiniz/" target='_blank'><abbr title="Abrir LinkedIn em outra aba"><AiOutlineLinkedin/></abbr></a>
-            <a href="https://github.com/HernaniSamuel" target='_blank'><abbr title="Abrir GitHub em outra aba"><AiOutlineGithub/></abbr></a>
+            <a href="https://www.linkedin.com/in/hernanisamueldiniz/" target='_blank'><abbr title="Open LinkedIn in another tab."><AiOutlineLinkedin/></abbr></a>
+            <a href="https://github.com/HernaniSamuel" target='_blank'><abbr title="Open GitHub in another tab."><AiOutlineGithub/></abbr></a>
             <button
              onClick={copyToClipboard}
              onMouseOver={handleMouseOver}
              onMouseOut={handleMouseOut}
-             ><abbr title="Copiar email">{icon}</abbr></button>
-            <a href={curriculo} target='_self' download="Curriculo_HernaniSamuel.pdf" type='application/pdf'><abbr title="baixar currículo"><AiOutlineFile/></abbr></a>
+             ><abbr title="Copy email">{icon}</abbr></button>
+            <a href={curriculo} target='_self' download="Curriculo_HernaniSamuel.pdf" type='application/pdf'><abbr title="Download resume"><AiOutlineFile/></abbr></a>
         </div>
     )
 }
