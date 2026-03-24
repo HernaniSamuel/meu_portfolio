@@ -1,13 +1,246 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="src/assets/H.ico" type="image/x-icon">
-    <title>Hernani Samuel</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hernani Samuel</title>
+<link rel="icon" href="H.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<div class="logo">HERNANI SAMUEL</div>
+</header>
+
+<section class="hero">
+<h1>SOFTWARE<br>ENGINEER</h1>
+
+<p>Focused on low-level systems, Rust, interpreters, and data-oriented software architecture.</p>
+
+<div class="hero-buttons">
+<a href="Curriculo_HernaniSamuel.pdf" class="btn" target="_blank">RESUME</a>
+<a href="https://www.linkedin.com/in/hernanisamueldiniz/" class="btn" target="_blank">LINKEDIN</a>
+<a href="https://github.com/HernaniSamuel" class="btn" target="_blank">GITHUB</a>
+<a href="#" class="btn" id="email-btn">EMAIL</a>
+</div>
+
+</section>
+
+<section id="projects">
+<h2 class="section-title">PROJECTS</h2>
+
+<div class="terminal">
+<div class="terminal-content">
+
+<span class="t-green">&gt;</span> status --projects<br><br>
+
+<span class="t-green">[OK]</span>        brainfuck interpreter<br>
+<span class="t-green">[OK]</span>        chip-8 emulator<br>
+<span class="t-green">[OK]</span>        mineinvest investment simulator<br>
+<span class="t-status-wip">[WIP]</span>       risc-v rv32i emulator<br>
+<span class="t-status-next">[NEXT]</span>      web assembly interpreter<br>
+<span class="t-status-idea">[IDEA]</span>      vesta<br>
+<span class="t-status-cancel">[CANCELLED]</span> sil compiler - Honorable Mention<br>
+
+<br>
+
+<!-- RISC-V -->
+<span class="t-green">&gt;</span> info riscv<br>
+<div class="project-block">
+<span class="t-label">NAME:</span> <span class="t-value">RISC-V Emulator</span><br>
+<span class="t-label">STATUS:</span> <span class="t-dim">WIP</span><br>
+<span class="t-label">STACK:</span> <span class="t-value">Rust</span><br>
+<span class="t-label">INFO:</span>
+<span class="t-dim">
+A RISC-V RV32I+ emulator designed to run a simple FreeRTOS operating system.
+Built to learn more about ISAs and real-world industrial architectures,
+as well as how machines work at the lowest level. This emulator is also
+intended to serve as an environment for practicing bare-metal Rust.
+</span><br>
+<span class="t-label">LINK:</span>
+<a href="https://github.com/HernaniSamuel/riscv-emulator" target="_blank" class="terminal-link">
+github.com/HernaniSamuel/riscv-emulator
+</a>
+</div>
+
+<br>
+
+<!-- WEB ASSEMBLY -->
+<span class="t-green">&gt;</span> info wasm<br>
+<div class="project-block">
+<span class="t-label">NAME:</span> <span class="t-value">WebAssembly Interpreter</span><br>
+<span class="t-label">STATUS:</span> <span class="t-dim">NEXT</span><br>
+<span class="t-label">STACK:</span> <span class="t-value">Rust (planned)</span><br>
+<span class="t-label">INFO:</span>
+<span class="t-dim">
+A .wasm interpreter to learn more about stack-based ISAs and WebAssembly
+fundamentals. Intended as an environment for practicing Rust for WebAssembly
+and refining software design and implementation skills.
+</span><br>
+<span class="t-label">LINK:</span>
+<span class="t-dim">coming soon...</span>
+</div>
+
+<br>
+
+<!-- CHIP-8 -->
+<span class="t-green">&gt;</span> info chip-8<br>
+<div class="project-block">
+<span class="t-label">NAME:</span> <span class="t-value">CHIP-8 Interpreter</span><br>
+<span class="t-label">STATUS:</span> <span class="t-green">Complete</span><br>
+<span class="t-label">STACK:</span> <span class="t-value">Rust</span><br>
+<span class="t-label">INFO:</span>
+<span class="t-dim">
+A Chip-8 interpreter built to learn how virtual machines work,
+including instruction decoding and ISA concepts.
+</span><br>
+<span class="t-label">LINK:</span>
+<a href="https://github.com/HernaniSamuel/chip8" target="_blank" class="terminal-link">
+github.com/HernaniSamuel/chip8
+</a>
+</div>
+
+<br>
+
+<!-- BRAINFUCK -->
+<span class="t-green">&gt;</span> info brainfuck<br>
+<div class="project-block">
+<span class="t-label">NAME:</span> <span class="t-value">Brainfuck Interpreter</span><br>
+<span class="t-label">STATUS:</span> <span class="t-green">Complete</span><br>
+<span class="t-label">STACK:</span> <span class="t-value">Rust</span><br>
+<span class="t-label">INFO:</span>
+<span class="t-dim">
+Brainfuck interpreter created to practice software engineering skills
+and learn Rust, interpreters, and programming language concepts.
+</span><br>
+<span class="t-label">LINK:</span>
+<a href="https://github.com/HernaniSamuel/brainfuck" target="_blank" class="terminal-link">
+github.com/HernaniSamuel/brainfuck
+</a>
+</div>
+
+<br>
+
+<!-- VESTA -->
+<span class="t-green">&gt;</span> info vesta<br>
+<div class="project-block">
+<span class="t-label">NAME:</span> <span class="t-value">Vesta Programming Language</span><br>
+<span class="t-label">STATUS:</span> <span class="t-dim">IDEA</span><br>
+<span class="t-label">STACK:</span> <span class="t-value">Rust (planned)</span><br>
+<span class="t-label">INFO:</span>
+<span class="t-dim">
+Experimental concatenative programming language designed to be pure,
+safe, high-performance and bare-metal.
+</span></br>
+<span class="t-label">LINK:</span>
+<span class="t-dim">coming soon...</span>
+</div>
+
+<br>
+
+<!-- MINEINVEST -->
+<span class="t-green">&gt;</span> info mineinvest<br>
+<div class="project-block">
+<span class="t-label">NAME:</span> <span class="t-value">MineInvest Investment Simulator</span><br>
+<span class="t-label">STATUS:</span> <span class="t-green">Complete</span><br>
+<span class="t-label">STACK:</span>
+<span class="t-value">Python, Pandas, FastAPI, yfinance, React, Bootstrap, Lightweight Charts, Chart.js</span><br>
+<span class="t-label">INFO:</span>
+<span class="t-dim">
+Investment simulator that acts as a time-traveling broker allowing
+backtesting using Yahoo Finance historical data.
+</span><br>
+<span class="t-label">LINK:</span>
+<a href="https://github.com/HernaniSamuel/MineInvest" target="_blank" class="terminal-link">
+github.com/HernaniSamuel/MineInvest
+</a><br>
+<span class="t-label">VIDEO (PT-BR):</span>
+<a href="https://www.youtube.com/watch?v=ZDhVMzFO3_A" target="_blank" class="terminal-link">
+https://www.youtube.com/watch?v=ZDhVMzFO3_A
+</a>
+</div>
+
+<br>
+
+<!-- SIL -->
+<span class="t-green">&gt;</span> info sil<br>
+<div class="project-block">
+<span class="t-label">NAME:</span> <span class="t-value">SIL SPIR-V Compiler - HONORABLE MENTION</span><br>
+<span class="t-label">STATUS:</span> <span class="t-red">CANCELLED</span><br>
+<span class="t-label">STACK:</span> <span class="t-value">Python, ChatGPT</span><br>
+<span class="t-label">INFO:</span>
+<span class="t-dim">
+A programming language that compiles to SPIR-V. 
+My first attempt at creating a programming language was intended to rival NVIDIA’s CUDA (yes, I didn’t really know what I was getting myself into).
+I never managed to achieve true parallelism with it, but it actually works on the GPU. An honorable mention for the fact that I managed to get this far using pure Python.
+</span><br>
+<span class="t-label">LINK:</span>
+<a href="https://github.com/HernaniSamuel/sil_compiler" target="_blank" class="terminal-link">
+github.com/HernaniSamuel/sil_compiler
+</a>
+</div>
+</div>
+</div>
+
+</section>
+
+<section>
+<h2 class="section-title">ABOUT ME</h2>
+<div class="terminal">
+<span class="t-green">&gt;</span> whoami<br>
+<div class="project-block">
+
+<span class="t-dim">
+Software engineer focused on low-level systems and Rust.<br>
+Building interpreters, emulators, and tooling.
+</span>
+
+<br><br>
+
+<span class="t-label">INTERESTS:</span><br>
+<span class="t-dim">- Systems programming</span><br>
+<span class="t-dim">- Virtual machines</span><br>
+<span class="t-dim">- ISA design</span><br>
+<span class="t-dim">- Bare-metal development</span><br>
+
+<br>
+
+<span class="t-label">CURRENT FOCUS:</span> <span class="t-value">Rust</span>
+
+</div>
+</section>
+
+<footer>
+HERNANI SAMUEL DINIZ &copy; 2026
+</footer>
+
+
+<script>
+const emailBtn = document.getElementById("email-btn");
+const email = "hernanisamuel0@gmail.com";
+
+emailBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    try {
+        await navigator.clipboard.writeText(email);
+
+        emailBtn.textContent = "COPIED";
+        emailBtn.classList.add("copied");
+
+        setTimeout(() => {
+            emailBtn.textContent = "EMAIL";
+            emailBtn.classList.remove("copied");
+        }, 1500);
+
+    } catch {
+        emailBtn.textContent = "ERROR";
+    }
+});
+</script>
+
+</body>
 </html>
