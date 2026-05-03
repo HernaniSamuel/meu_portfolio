@@ -60,9 +60,10 @@
 
 <section id="demo">
   <h2 class="section-title">
-    <span class="title-num">01</span> LIVE DEMO — RISC-V LINUX
+    <span class="title-num">01</span> LIVE DEMO — RISCV-EMULATOR LINUX 
   </h2>
 
+  <div class="demo-layout">
   <div class="terminal" id="demo-terminal">
     <div class="terminal-titlebar">
       <span class="tb-dot tb-red"></span>
@@ -114,6 +115,48 @@
         <div class="demo-perf" id="demo-perf"></div>
       </div>
     </div>
+  </div>
+
+  <div class="cmd-panel">
+    <div class="cmd-panel-title">// try these commands</div>
+    <div class="cmd-list">
+      <div class="cmd-group">
+        <div class="cmd-group-label">login</div>
+        <div class="cmd-item"><span class="cmd-code">root</span><span class="cmd-desc">no password</span></div>
+      </div>
+      <div class="cmd-group">
+        <div class="cmd-group-label">system</div>
+        <div class="cmd-item"><span class="cmd-code">uname -a</span><span class="cmd-desc">kernel info</span></div>
+        <div class="cmd-item"><span class="cmd-code">cat /proc/cpuinfo</span><span class="cmd-desc">RISC-V CPU info</span></div>
+        <div class="cmd-item"><span class="cmd-code">cat /proc/version</span><span class="cmd-desc">build info</span></div>
+        <div class="cmd-item"><span class="cmd-code">dmesg | tail</span><span class="cmd-desc">kernel log</span></div>
+      </div>
+      <div class="cmd-group">
+        <div class="cmd-group-label">memory</div>
+        <div class="cmd-item"><span class="cmd-code">free -h</span><span class="cmd-desc">memory usage</span></div>
+        <div class="cmd-item"><span class="cmd-code">cat /proc/meminfo</span><span class="cmd-desc">detailed memory</span></div>
+      </div>
+      <div class="cmd-group">
+        <div class="cmd-group-label">processes</div>
+        <div class="cmd-item"><span class="cmd-code">ps</span><span class="cmd-desc">running processes</span></div>
+        <div class="cmd-item"><span class="cmd-code">top</span><span class="cmd-desc">process monitor</span></div>
+      </div>
+      <div class="cmd-group">
+        <div class="cmd-group-label">hardware</div>
+        <div class="cmd-item"><span class="cmd-code">cat /proc/interrupts</span><span class="cmd-desc">CLINT timer &amp; IRQs</span></div>
+        <div class="cmd-item"><span class="cmd-code">ls /bin</span><span class="cmd-desc">available binaries</span></div>
+        <div class="cmd-item"><span class="cmd-code">ls /proc</span><span class="cmd-desc">proc filesystem</span></div>
+      </div>
+      <div class="cmd-group">
+        <div class="cmd-group-label">try it</div>
+        <div class="cmd-item"><span class="cmd-code">echo "hello from riscv"</span><span class="cmd-desc">it just works</span></div>
+        <div class="cmd-item"><span class="cmd-code">./coremark</span><span class="cmd-desc">CoreMark benchmark</span></div>
+        <div class="cmd-item"><span class="cmd-code">./hello_linux</span><span class="cmd-desc">hello world binary</span></div>
+        <div class="cmd-item"><span class="cmd-code">./duktapetest</span><span class="cmd-desc">JS engine on RISC-V</span></div>
+        <div class="cmd-item"><span class="cmd-code">busybox</span><span class="cmd-desc">all available commands</span></div>
+      </div>
+    </div>
+  </div>
   </div>
 </section>
 
@@ -464,7 +507,7 @@ document.querySelectorAll('.project-card, .about-grid').forEach(el => observer.o
     if (term) { term.dispose(); }
     term = new Terminal({
       fontFamily: "'VT323', 'Share Tech Mono', monospace",
-      fontSize: 16,
+      fontSize: 20,
       scrollback: 5000,
       theme: {
         background: '#030303',
@@ -573,23 +616,20 @@ document.querySelectorAll('.project-card, .about-grid').forEach(el => observer.o
       ipsAccum = 0; ipsFrames = 0; lastPerfTs = now;
     }
 
-    // NOVO
     if (emulator.is_halted()) {
       cancelAnimationFrame(rafId);
 
       if (emulator.is_restart()) {
-        // Kernel pediu reboot — recria o emulador silenciosamente
         term.write('\r\n\x1b[33m[ RESTARTING... ]\x1b[0m\r\n');
         try { emulator.free(); } catch(_) {}
         emulator = new EmulatorWasm();
         running = true;
-        loop(); // reinicia o loop com o emulador novo
+        loop();
       } else if (emulator.is_fault()) {
         running = false;
         setStatus('halted');
-        term.write('\r\n\x1b[31m[ FAULT — emulator halted ]\x1b[0m\r\n');
+        term.write('\r\n\x1b[31m[ FAULT \u2014 emulator halted ]\x1b[0m\r\n');
       } else {
-        // Poweroff limpo
         running = false;
         setStatus('halted');
         term.write('\r\n\x1b[33m[ POWEROFF ]\x1b[0m\r\n');

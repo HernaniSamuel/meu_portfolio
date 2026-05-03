@@ -652,11 +652,94 @@ footer {
     gap: 6px;
   }
 }
-/* ── Demo section ──────────────────────────────────────── */
-#demo-terminal {
-  max-width: 900px;
-  width: 100%;
+/* ── Demo layout (terminal + commands side by side) ─────── */
+.demo-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
 }
+
+#demo-terminal {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* ── Command panel ─────────────────────────────────────── */
+.cmd-panel {
+  flex: 1;              /* ocupa todo espaço disponível */
+  min-width: 260px;     /* evita ficar pequeno demais */
+  margin-top: 0;
+  background: #030303;
+  border: 1px solid rgba(255,179,0,0.2);
+  box-shadow: 0 0 0 1px rgba(255,179,0,0.05), 0 20px 60px rgba(0,0,0,0.6);
+  padding: 16px 20px 20px;
+  align-self: flex-start;
+}
+
+.cmd-panel-title {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  color: rgba(255,179,0,0.4);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.cmd-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cmd-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 180px;
+}
+
+.cmd-group-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 2px;
+  opacity: 0.7;
+}
+
+.cmd-item {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.cmd-code {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  color: var(--amber);
+  white-space: nowrap;
+  cursor: default;
+}
+
+.cmd-desc {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  color: rgba(255,179,0,0.4);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .demo-layout { flex-direction: column; }
+  #demo-terminal { width: 100%; }
+  .cmd-panel { flex: none; width: 100%; padding: 14px 16px; }
+  .cmd-list  { gap: 16px 20px; }
+  .cmd-group { min-width: 140px; }
+  .cmd-code  { font-size: 12px; }
+}
+
+/* ── Demo section ──────────────────────────────────────── */
+/* #demo-terminal width is now controlled by .demo-layout flex */
 
 .demo-body {
   padding: 0;
