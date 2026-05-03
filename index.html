@@ -573,11 +573,27 @@ document.querySelectorAll('.project-card, .about-grid').forEach(el => observer.o
       ipsAccum = 0; ipsFrames = 0; lastPerfTs = now;
     }
 
+    // NOVO
     if (emulator.is_halted()) {
-      running = false;
       cancelAnimationFrame(rafId);
-      setStatus('halted');
-      term.write('\r\n\x1b[33m[EMULATOR HALTED]\x1b[0m\r\n');
+
+      if (emulator.is_restart()) {
+        // Kernel pediu reboot — recria o emulador silenciosamente
+        term.write('\r\n\x1b[33m[ RESTARTING... ]\x1b[0m\r\n');
+        try { emulator.free(); } catch(_) {}
+        emulator = new EmulatorWasm();
+        running = true;
+        loop(); // reinicia o loop com o emulador novo
+      } else if (emulator.is_fault()) {
+        running = false;
+        setStatus('halted');
+        term.write('\r\n\x1b[31m[ FAULT — emulator halted ]\x1b[0m\r\n');
+      } else {
+        // Poweroff limpo
+        running = false;
+        setStatus('halted');
+        term.write('\r\n\x1b[33m[ POWEROFF ]\x1b[0m\r\n');
+      }
     }
   }
 
