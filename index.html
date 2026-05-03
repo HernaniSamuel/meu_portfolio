@@ -58,9 +58,68 @@
   </div>
 </section>
 
+<section id="demo">
+  <h2 class="section-title">
+    <span class="title-num">01</span> LIVE DEMO — RISC-V LINUX
+  </h2>
+
+  <div class="terminal" id="demo-terminal">
+    <div class="terminal-titlebar">
+      <span class="tb-dot tb-red"></span>
+      <span class="tb-dot tb-yellow"></span>
+      <span class="tb-dot tb-green"></span>
+      <span class="tb-title">hernani@dev:~$ ./riscv-emulator --kernel Image</span>
+      <span class="demo-status" id="demo-status">
+        <span class="demo-dot demo-dot-idle"></span>
+        <span id="demo-status-text">READY</span>
+      </span>
+    </div>
+    <div class="terminal-body demo-body">
+      <div class="demo-info-bar">
+        <span class="demo-tag">RV32I+</span>
+        <span class="demo-tag">Linux</span>
+        <span class="demo-tag">WebAssembly</span>
+        <span class="demo-sep">//</span>
+        <span class="demo-hint">Click BOOT to start the emulator in your browser — no install needed.</span>
+      </div>
+
+      <div class="demo-screen-wrap" id="demo-screen-wrap">
+        <!-- xterm renders here -->
+        <div id="xterm-container"></div>
+
+        <div class="demo-boot-overlay" id="demo-boot-overlay">
+          <div class="boot-inner">
+            <div class="boot-ascii">
+              <pre class="boot-art">
+ ██████╗ ██╗███████╗ ██████╗       ██╗   ██╗
+ ██╔══██╗██║██╔════╝██╔════╝       ██║   ██║
+ ██████╔╝██║███████╗██║       ████╗██║   ██║
+ ██╔══██╗██║╚════██║██║       ╚═══╝╚██╗ ██╔╝
+ ██║  ██║██║███████║╚██████╗        ╚████╔╝
+ ╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝         ╚═══╝</pre>
+              <div class="boot-sub">RV32I EMULATOR · WEBASSEMBLY · LINUX KERNEL</div>
+            </div>
+            <button class="boot-btn" id="boot-btn">
+              <span class="boot-btn-icon">▶</span> BOOT LINUX
+            </button>
+            <div class="boot-note">~3.1 MB WASM · runs entirely in your browser</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-controls">
+        <button class="demo-ctrl-btn" id="demo-reset-btn" disabled>
+          ↺ RESET
+        </button>
+        <div class="demo-perf" id="demo-perf"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="projects">
   <h2 class="section-title">
-    <span class="title-num">01</span> PROJECTS
+    <span class="title-num">02</span> PROJECTS
   </h2>
 
   <div class="terminal">
@@ -264,7 +323,7 @@
 
 <section id="about">
   <h2 class="section-title">
-    <span class="title-num">02</span> ABOUT ME
+    <span class="title-num">03</span> ABOUT ME
   </h2>
 
   <div class="terminal">
@@ -353,5 +412,191 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.project-card, .about-grid').forEach(el => observer.observe(el));
 </script>
+<!-- xterm.js CSS — inline para evitar border injetada pela CDN -->
+<style>
+.xterm { position: relative; user-select: none; -ms-user-select: none; -webkit-user-select: none; }
+.xterm.focus, .xterm:focus { outline: none; }
+.xterm .xterm-helpers { position: absolute; top: 0; z-index: 5; }
+.xterm .xterm-helper-textarea { padding: 0; border: none !important; outline: none !important; resize: none; position: absolute; opacity: 0; left: -9999em; top: 0; width: 0; height: 0; z-index: -5; white-space: nowrap; overflow: hidden; color: transparent; }
+.xterm .composition-view { color: #fff; display: none; position: absolute; white-space: nowrap; z-index: 1; }
+.xterm .composition-view.active { display: block; }
+.xterm .xterm-viewport { background-color: #000; overflow-y: scroll; cursor: default; position: absolute; right: 0; left: 0; top: 0; bottom: 0; border: none !important; outline: none !important; }
+.xterm .xterm-screen { position: relative; border: none !important; outline: none !important; }
+.xterm .xterm-screen canvas { position: absolute; left: 0; top: 0; }
+.xterm .xterm-scroll-area { visibility: hidden; }
+.xterm-char-measure-element { display: inline-block; visibility: hidden; position: absolute; top: 0; left: -9999em; line-height: normal; }
+.xterm.enable-mouse-events { cursor: default; }
+.xterm .xterm-accessibility, .xterm .xterm-message { position: absolute; left: 0; top: 0; bottom: 0; z-index: 10; color: transparent; }
+.xterm .live-region { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.xterm-underline-1 { text-decoration: underline; }
+.xterm-strikethrough-1 { text-decoration: line-through; }
+.xterm-screen .xterm-decoration-container .xterm-decoration { z-index: 6; position: absolute; }
+.xterm-decoration-overview-ruler { z-index: 7; position: absolute; top: 0; right: 0; pointer-events: none; }
+.xterm-decoration-top { z-index: 2; position: relative; }
+.xterm-rows { position: absolute; white-space: pre; font-kerning: none; }
+</style>
+
+<script type="module">
+  import { Terminal }  from 'https://cdn.jsdelivr.net/npm/xterm@5.3.0/+esm';
+  import { FitAddon }  from 'https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.8.0/+esm';
+  import init, { EmulatorWasm } from './pkg/riscv_emulator.js';
+
+  const bootBtn      = document.getElementById('boot-btn');
+  const overlay      = document.getElementById('demo-boot-overlay');
+  const resetBtn     = document.getElementById('demo-reset-btn');
+  const statusDot    = document.querySelector('.demo-dot');
+  const statusText   = document.getElementById('demo-status-text');
+  const perfEl       = document.getElementById('demo-perf');
+
+  let term, fitAddon, emulator, rafId, running = false;
+  let ipsAccum = 0, ipsFrames = 0, lastPerfTs = performance.now();
+
+  const BATCH     = 50_000;   // instructions per step — smaller = more responsive
+  const FRAME_MS  = 12;       // max ms to spend per frame before yielding to browser
+
+  function setStatus(state) {
+    statusDot.className = 'demo-dot demo-dot-' + state;
+    const labels = { idle: 'READY', booting: 'BOOTING…', running: 'RUNNING', halted: 'HALTED' };
+    statusText.textContent = labels[state] ?? state.toUpperCase();
+  }
+
+  function initTerm() {
+    if (term) { term.dispose(); }
+    term = new Terminal({
+      fontFamily: "'VT323', 'Share Tech Mono', monospace",
+      fontSize: 16,
+      scrollback: 5000,
+      theme: {
+        background: '#030303',
+        foreground: '#FFB300',
+        cursor:     '#FFB300',
+        cursorAccent: '#000',
+        selectionBackground: 'rgba(255,179,0,0.25)',
+        black:   '#000000', brightBlack:   '#444444',
+        red:     '#FF2244', brightRed:     '#FF5577',
+        green:   '#00FF88', brightGreen:   '#55FFaa',
+        yellow:  '#FFB300', brightYellow:  '#FFD54F',
+        blue:    '#8ab4ff', brightBlue:    '#aaccff',
+        magenta: '#cc88ff', brightMagenta: '#dd99ff',
+        cyan:    '#00DDFF', brightCyan:    '#55EEFF',
+        white:   '#cccccc', brightWhite:   '#ffffff',
+      },
+      cursorBlink: true,
+      allowTransparency: true,
+      convertEol: false,
+    });
+
+    fitAddon = new FitAddon();
+    term.loadAddon(fitAddon);
+    const container = document.getElementById('xterm-container');
+    container.innerHTML = '';
+    // Garante que o container tem dimensões antes do open — sem isso o xterm calcula errado
+    const wrap = document.getElementById('demo-screen-wrap');
+    container.style.width  = wrap.clientWidth  + 'px';
+    container.style.height = wrap.clientHeight + 'px';
+    term.open(container);
+    // Reseta pra absoluto depois que o xterm inicializou
+    container.style.width  = '';
+    container.style.height = '';
+
+    // Staggered fits: rAF lets xterm render, timeouts catch late layout shifts
+    const doFit = () => { try { fitAddon.fit(); } catch(_){} };
+    // Fit em cascata: garante que o layout estabilizou antes de calcular colunas
+    requestAnimationFrame(() => {
+      doFit();
+      setTimeout(doFit, 50);
+      setTimeout(doFit, 200);
+      setTimeout(doFit, 500);
+    });
+    setTimeout(() => { doFit(); term.focus(); }, 300);
+
+    // Re-fit sempre que qualquer dimensão mudar
+    const ro = new ResizeObserver(() => { try { fitAddon.fit(); } catch(_){} });
+    ro.observe(container);
+    if (wrap) ro.observe(wrap);
+
+    // re-focus on click anywhere inside the terminal area
+    container.addEventListener('click', () => term.focus());
+
+    term.onData(data => {
+      if (!emulator || !running) return;
+      for (let i = 0; i < data.length; i++) {
+        emulator.send_key(data.charCodeAt(i));
+      }
+    });
+  }
+
+  async function boot() {
+    bootBtn.disabled = true;
+    bootBtn.innerHTML = '<span class="boot-btn-icon blink-slow">▮</span> LOADING WASM…';
+    setStatus('booting');
+
+    try {
+      await init(new URL('./pkg/riscv_emulator_bg.wasm', import.meta.url));
+      emulator = new EmulatorWasm();
+    } catch(e) {
+      console.error(e);
+      bootBtn.disabled = false;
+      bootBtn.innerHTML = '<span class="boot-btn-icon">▶</span> RETRY';
+      setStatus('idle');
+      return;
+    }
+
+    initTerm();
+    overlay.style.display = 'none';
+    resetBtn.disabled = false;
+    running = true;
+    setStatus('running');
+    loop();
+  }
+
+  function loop() {
+    if (!running) return;
+    rafId = requestAnimationFrame(loop);
+
+    // Run as many batches as fit within FRAME_MS budget, then yield
+    const frameStart = performance.now();
+    let output = '';
+    do {
+      output += emulator.step_batch(BATCH);
+      if (emulator.is_halted()) break;
+    } while (performance.now() - frameStart < FRAME_MS);
+
+    if (output.length) term.write(output);
+
+    // perf counter
+    ipsAccum += BATCH; ipsFrames++;
+    const now = performance.now();
+    if (now - lastPerfTs >= 1000) {
+      const mips = (ipsAccum / 1_000_000).toFixed(1);
+      perfEl.textContent = `~${mips} MIPS`;
+      ipsAccum = 0; ipsFrames = 0; lastPerfTs = now;
+    }
+
+    if (emulator.is_halted()) {
+      running = false;
+      cancelAnimationFrame(rafId);
+      setStatus('halted');
+      term.write('\r\n\x1b[33m[EMULATOR HALTED]\x1b[0m\r\n');
+    }
+  }
+
+  function reset() {
+    running = false;
+    if (rafId) cancelAnimationFrame(rafId);
+    if (emulator) { try { emulator.free(); } catch(_){} emulator = null; }
+    if (term)    { term.dispose(); term = null; }
+    perfEl.textContent = '';
+    resetBtn.disabled = true;
+    overlay.style.display = '';
+    bootBtn.disabled = false;
+    bootBtn.innerHTML = '<span class="boot-btn-icon">▶</span> BOOT LINUX';
+    setStatus('idle');
+  }
+
+  bootBtn.addEventListener('click', boot);
+  resetBtn.addEventListener('click', reset);
+</script>
+
 </body>
 </html>
