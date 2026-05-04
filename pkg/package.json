@@ -1,0 +1,15 @@
+{
+  "name": "riscv-emulator",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "riscv_emulator_bg.wasm",
+    "riscv_emulator.js",
+    "riscv_emulator.d.ts"
+  ],
+  "main": "riscv_emulator.js",
+  "types": "riscv_emulator.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
