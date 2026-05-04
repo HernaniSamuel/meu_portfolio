@@ -1,4 +1,4 @@
-# mini-rv32ima
+# riscv-emulator
 
 A RISC-V RV32IMA emulator written in Rust, capable of running a real Linux kernel and FreeRTOS. Compiles to WebAssembly for in-browser execution.
 
