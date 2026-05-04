@@ -150,9 +150,9 @@
       <div class="cmd-group">
         <div class="cmd-group-label">try it</div>
         <div class="cmd-item"><span class="cmd-code">echo "hello from riscv"</span><span class="cmd-desc">it just works</span></div>
-        <div class="cmd-item"><span class="cmd-code">./coremark</span><span class="cmd-desc">CoreMark benchmark</span></div>
+        <div class="cmd-item"><span class="cmd-code">./coremark</span><span class="cmd-desc">CoreMark benchmark - takes a few seconds</span></div>
         <div class="cmd-item"><span class="cmd-code">./hello_linux</span><span class="cmd-desc">hello world binary</span></div>
-        <div class="cmd-item"><span class="cmd-code">./duktapetest</span><span class="cmd-desc">JS engine on RISC-V</span></div>
+        <div class="cmd-item"><span class="cmd-code">./duktapetest fizzbuzz.js</span><span class="cmd-desc">JS engine on RISC-V - fizzbuzz.js is an included JS file</span></div>
         <div class="cmd-item"><span class="cmd-code">busybox</span><span class="cmd-desc">all available commands</span></div>
       </div>
     </div>
@@ -181,6 +181,10 @@
       <div class="status-grid">
         <div class="status-row">
           <span class="status-badge badge-ok">OK</span>
+          <span class="status-name">risc-v rv32i emulator</span>
+        </div>
+        <div class="status-row">
+          <span class="status-badge badge-ok">OK</span>
           <span class="status-name">brainfuck interpreter</span>
         </div>
         <div class="status-row">
@@ -192,15 +196,7 @@
           <span class="status-name">mineinvest investment simulator</span>
         </div>
         <div class="status-row">
-          <span class="status-badge badge-wip">WIP</span>
-          <span class="status-name">risc-v rv32i emulator</span>
-        </div>
-        <div class="status-row">
           <span class="status-badge badge-next">NEXT</span>
-          <span class="status-name">web assembly interpreter</span>
-        </div>
-        <div class="status-row">
-          <span class="status-badge badge-idea">IDEA</span>
           <span class="status-name">vesta programming language</span>
         </div>
         <div class="status-row">
@@ -219,37 +215,24 @@
       <div class="project-card">
         <div class="project-header">
           <span class="project-name">RISC-V Emulator</span>
-          <span class="project-badge badge-wip-inline">WIP</span>
+          <span class="project-badge badge-ok-inline">COMPLETE</span>
         </div>
-        <div class="project-stack">Rust</div>
+        <div class="project-stack">Rust · WebAssembly</div>
         <p class="project-desc">
-          A RISC-V RV32I+ emulator designed to run a simple FreeRTOS operating system.
-          Built to learn more about ISAs and real-world industrial architectures,
-          as well as how machines work at the lowest level. Also intended as an environment
-          for practicing bare-metal Rust.
+          A cycle-accurate RV32IMA emulator written in Rust — boots a real Linux 6.1 kernel
+          and FreeRTOS from bare-metal ELF. Implements the full RV32IMA ISA, machine-mode
+          privileged spec, CLINT timer, UART 16550, ELF loader with symbol table,
+          objdump-compatible disassembler, and execution tracer.
+          Compiles to WebAssembly — the terminal above runs the kernel live in your browser.
+          Inspired by and initially based on <a href="https://github.com/cnlohr/mini-rv32ima" target="_blank" class="project-link-inline">CNLohr's mini-rv32ima</a> —
+          the original ~400-line C implementation that first proved the concept of booting Linux on a minimal RV32 core.
         </p>
         <a href="https://github.com/HernaniSamuel/riscv-emulator" target="_blank" class="project-link">
           ⇗ github.com/HernaniSamuel/riscv-emulator
         </a>
-      </div>
-
-      <!-- WEB ASSEMBLY -->
-      <div class="terminal-line">
-        <span class="t-green prompt">❯</span>
-        <span class="cmd"> info wasm</span>
-      </div>
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-name">WebAssembly Interpreter</span>
-          <span class="project-badge badge-next-inline">NEXT</span>
-        </div>
-        <div class="project-stack">Rust (planned)</div>
-        <p class="project-desc">
-          A .wasm interpreter to learn more about stack-based ISAs and WebAssembly fundamentals.
-          Intended as an environment for practicing Rust for WebAssembly and refining software
-          design and implementation skills.
-        </p>
-        <span class="project-link muted">coming soon...</span>
+        <a href="https://hernanisamuel.github.io/riscv-emulator/riscv_emulator/index.html" target="_blank" class="project-link">
+          ⇗ API Documentation
+        </a>
       </div>
 
       <!-- CHIP-8 -->
@@ -300,7 +283,7 @@
       <div class="project-card">
         <div class="project-header">
           <span class="project-name">Vesta Programming Language</span>
-          <span class="project-badge badge-idea-inline">IDEA</span>
+          <span class="project-badge badge-next-inline">NEXT</span>
         </div>
         <div class="project-stack">Rust (planned)</div>
         <p class="project-desc">
@@ -422,6 +405,9 @@
     <span class="footer-logo">HS</span>
     <span class="footer-copy">HERNANI SAMUEL DINIZ &copy; 2026</span>
     <span class="footer-uptime"><span class="status-dot small"></span> ALL SYSTEMS OPERATIONAL</span>
+  </div>
+  <div class="footer-credits">
+    Linux kernel image via <a href="https://github.com/cnlohr/mini-rv32ima" target="_blank" class="footer-credit-link">mini-rv32ima</a> by <a href="https://github.com/cnlohr" target="_blank" class="footer-credit-link">CNLohr</a> &mdash; BSD/MIT/CC0
   </div>
 </footer>
 

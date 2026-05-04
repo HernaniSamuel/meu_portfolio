@@ -459,6 +459,16 @@ section {
   margin-bottom: 12px;
 }
 
+.project-link-inline {
+  color: rgba(255,179,0,0.6);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,179,0,0.25);
+}
+.project-link-inline:hover {
+  color: var(--amber);
+  border-bottom-color: var(--amber);
+}
+
 .project-link {
   display: block;
   font-family: 'Share Tech Mono', monospace;
@@ -587,6 +597,24 @@ footer {
   font-size: 0.65rem;
   color: rgba(255,179,0,0.25);
   letter-spacing: 1px;
+}
+
+.footer-credits {
+  text-align: center;
+  padding: 8px 48px 0;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  color: rgba(255,179,0,0.25);
+  letter-spacing: 0.05em;
+}
+
+.footer-credit-link {
+  color: rgba(255,179,0,0.4);
+  text-decoration: none;
+}
+
+.footer-credit-link:hover {
+  color: rgba(255,179,0,0.7);
 }
 
 .footer-uptime {
