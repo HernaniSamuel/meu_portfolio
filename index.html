@@ -22,21 +22,27 @@
   <div class="logo">
     <span class="logo-bracket">[</span>HERNANI SAMUEL<span class="logo-bracket">]</span>
   </div>
-  <div class="header-status">
-    <span class="status-dot"></span>
-    <span class="status-text">ONLINE</span>
+  <div class="header-right">
+    <div class="lang-toggle" id="lang-toggle">
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="pt">PT-BR</button>
+    </div>
+    <div class="header-status">
+      <span class="status-dot"></span>
+      <span class="status-text">ONLINE</span>
+    </div>
   </div>
 </header>
 
 <section class="hero">
-  <div class="hero-eyebrow">
+  <div class="hero-eyebrow" data-i18n="hero.eyebrow">
     <span class="t-green blink-slow">▮</span>&nbsp;INITIALIZING PROFILE...
   </div>
-  <h1 class="glitch" data-text="SOFTWARE&#10;ENGINEER">SOFTWARE<br>ENGINEER</h1>
-  <p class="hero-sub">Focused on low-level systems, Rust, interpreters,<br>and type-driven software design.</p>
+  <h1 class="glitch" data-text="SOFTWARE&#10;ENGINEER" data-i18n="hero.title">SOFTWARE<br>ENGINEER</h1>
+  <p class="hero-sub" data-i18n="hero.sub">Backend &amp; full-stack engineer building production-grade systems in Java and Spring Boot,<br>with a parallel track in low-level systems programming and Rust.</p>
 
   <div class="hero-buttons">
-    <a href="Hernani_Samuel_Diniz_Resume.pdf" class="btn" target="_blank">
+    <a href="Hernani_Diniz_Resume.pdf" class="btn" id="resume-link" target="_blank" data-i18n="hero.resume">
       <span class="btn-icon">↓</span> RESUME
     </a>
     <a href="https://www.linkedin.com/in/hernanisamueldiniz/" class="btn" target="_blank">
@@ -51,16 +57,78 @@
   </div>
 
   <div class="hero-meta">
+    <span class="meta-tag">// java</span>
+    <span class="meta-tag">// spring boot</span>
+    <span class="meta-tag">// backend</span>
     <span class="meta-tag">// rust</span>
-    <span class="meta-tag">// systems</span>
-    <span class="meta-tag">// emulators</span>
-    <span class="meta-tag">// interpreters</span>
+  </div>
+</section>
+
+<section id="showcase">
+  <h2 class="section-title">
+    <span class="title-num">01</span> <span data-i18n="showcase.title">SHOWCASE — MUNEHISA INVESTMENT SIMULATOR</span>
+  </h2>
+
+  <div class="terminal" id="showcase-terminal">
+    <div class="terminal-titlebar">
+      <span class="tb-dot tb-red"></span>
+      <span class="tb-dot tb-yellow"></span>
+      <span class="tb-dot tb-green"></span>
+      <span class="tb-title">hernani@dev:~$ eog munehisa/*.webp</span>
+    </div>
+    <div class="terminal-body showcase-body">
+      <div class="demo-info-bar">
+        <span class="demo-tag">Java 21</span>
+        <span class="demo-tag">Spring Boot</span>
+        <span class="demo-tag">React</span>
+        <span class="demo-tag">D3.js</span>
+        <span class="demo-sep">//</span>
+        <span class="demo-hint" data-i18n="showcase.hint">Risk-free investment simulator — trade real historical market data against a time-traveling broker.</span>
+      </div>
+
+      <div class="carousel" id="munehisa-carousel">
+        <div class="carousel-track-wrap">
+          <div class="carousel-track" id="carousel-track">
+            <figure class="carousel-slide">
+              <img src="images/munehisa/dashboard.webp" alt="Munehisa dashboard showing cash balance, portfolio value, positions and allocation chart" data-i18n-alt="showcase.imgAlt1" loading="lazy">
+              <figcaption data-i18n="showcase.caption1">Dashboard — portfolio value, positions &amp; monthly allocation</figcaption>
+            </figure>
+            <figure class="carousel-slide">
+              <img src="images/munehisa/simulations.webp" alt="Munehisa simulation list with two saved time-traveling simulations" data-i18n-alt="showcase.imgAlt2" loading="lazy">
+              <figcaption data-i18n="showcase.caption2">Simulations — run multiple time-traveling scenarios in parallel</figcaption>
+            </figure>
+            <figure class="carousel-slide">
+              <img src="images/munehisa/trade.webp" alt="Munehisa trade screen with an interactive D3 candlestick chart" data-i18n-alt="showcase.imgAlt3" loading="lazy">
+              <figcaption data-i18n="showcase.caption3">Trade assets — interactive D3 candlestick chart over historical prices</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <button class="carousel-arrow carousel-prev" id="carousel-prev" aria-label="Previous screenshot" data-i18n-aria="showcase.ariaPrev">‹</button>
+        <button class="carousel-arrow carousel-next" id="carousel-next" aria-label="Next screenshot" data-i18n-aria="showcase.ariaNext">›</button>
+
+        <div class="carousel-dots" id="carousel-dots">
+          <button class="carousel-dot active" data-index="0" aria-label="Go to slide 1" data-i18n-aria="showcase.ariaDot1"></button>
+          <button class="carousel-dot" data-index="1" aria-label="Go to slide 2" data-i18n-aria="showcase.ariaDot2"></button>
+          <button class="carousel-dot" data-index="2" aria-label="Go to slide 3" data-i18n-aria="showcase.ariaDot3"></button>
+        </div>
+      </div>
+
+      <div class="showcase-links">
+        <a href="https://github.com/HernaniSamuel/munehisa-investment-simulator" target="_blank" class="project-link">
+          ⇗ github.com/HernaniSamuel/munehisa-investment-simulator
+        </a>
+        <a href="https://hernanisamuel.github.io/munehisa-investment-simulator/" target="_blank" class="project-link" data-i18n="showcase.linkDemo">
+          ⇗ Live Demo
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="demo">
   <h2 class="section-title">
-    <span class="title-num">01</span> LIVE DEMO — RISCV-EMULATOR LINUX 
+    <span class="title-num">02</span> <span data-i18n="demo.title">LIVE DEMO — RISCV-EMULATOR LINUX</span>
   </h2>
 
   <div class="demo-layout">
@@ -81,7 +149,7 @@
         <span class="demo-tag">Linux</span>
         <span class="demo-tag">WebAssembly</span>
         <span class="demo-sep">//</span>
-        <span class="demo-hint">Click BOOT to start the emulator in your browser — no install needed.</span>
+        <span class="demo-hint" data-i18n="demo.hint">Click BOOT to start the emulator in your browser — no install needed.</span>
       </div>
 
       <div class="demo-screen-wrap" id="demo-screen-wrap">
@@ -103,13 +171,13 @@
             <button class="boot-btn" id="boot-btn">
               <span class="boot-btn-icon">▶</span> BOOT LINUX
             </button>
-            <div class="boot-note">~3.1 MB WASM · runs entirely in your browser</div>
+            <div class="boot-note" data-i18n="demo.bootNote">~3.1 MB WASM · runs entirely in your browser</div>
           </div>
         </div>
       </div>
 
       <div class="demo-controls">
-        <button class="demo-ctrl-btn" id="demo-reset-btn" disabled>
+        <button class="demo-ctrl-btn" id="demo-reset-btn" disabled data-i18n="demo.resetBtn">
           ↺ RESET
         </button>
         <div class="demo-perf" id="demo-perf"></div>
@@ -118,42 +186,42 @@
   </div>
 
   <div class="cmd-panel">
-    <div class="cmd-panel-title">// try these commands</div>
+    <div class="cmd-panel-title" data-i18n="demo.cmdPanelTitle">// try these commands</div>
     <div class="cmd-list">
       <div class="cmd-group">
         <div class="cmd-group-label">login</div>
-        <div class="cmd-item"><span class="cmd-code">root</span><span class="cmd-desc">no password</span></div>
+        <div class="cmd-item"><span class="cmd-code">root</span><span class="cmd-desc" data-i18n="demo.cmd.noPassword">no password</span></div>
       </div>
       <div class="cmd-group">
-        <div class="cmd-group-label">system</div>
-        <div class="cmd-item"><span class="cmd-code">uname -a</span><span class="cmd-desc">kernel info</span></div>
-        <div class="cmd-item"><span class="cmd-code">cat /proc/cpuinfo</span><span class="cmd-desc">RISC-V CPU info</span></div>
-        <div class="cmd-item"><span class="cmd-code">cat /proc/version</span><span class="cmd-desc">build info</span></div>
-        <div class="cmd-item"><span class="cmd-code">dmesg | tail</span><span class="cmd-desc">kernel log</span></div>
+        <div class="cmd-group-label" data-i18n="demo.group.system">system</div>
+        <div class="cmd-item"><span class="cmd-code">uname -a</span><span class="cmd-desc" data-i18n="demo.cmd.kernelInfo">kernel info</span></div>
+        <div class="cmd-item"><span class="cmd-code">cat /proc/cpuinfo</span><span class="cmd-desc" data-i18n="demo.cmd.cpuInfo">RISC-V CPU info</span></div>
+        <div class="cmd-item"><span class="cmd-code">cat /proc/version</span><span class="cmd-desc" data-i18n="demo.cmd.buildInfo">build info</span></div>
+        <div class="cmd-item"><span class="cmd-code">dmesg | tail</span><span class="cmd-desc" data-i18n="demo.cmd.kernelLog">kernel log</span></div>
       </div>
       <div class="cmd-group">
-        <div class="cmd-group-label">memory</div>
-        <div class="cmd-item"><span class="cmd-code">free -h</span><span class="cmd-desc">memory usage</span></div>
-        <div class="cmd-item"><span class="cmd-code">cat /proc/meminfo</span><span class="cmd-desc">detailed memory</span></div>
+        <div class="cmd-group-label" data-i18n="demo.group.memory">memory</div>
+        <div class="cmd-item"><span class="cmd-code">free -h</span><span class="cmd-desc" data-i18n="demo.cmd.memUsage">memory usage</span></div>
+        <div class="cmd-item"><span class="cmd-code">cat /proc/meminfo</span><span class="cmd-desc" data-i18n="demo.cmd.memDetailed">detailed memory</span></div>
       </div>
       <div class="cmd-group">
-        <div class="cmd-group-label">processes</div>
-        <div class="cmd-item"><span class="cmd-code">ps</span><span class="cmd-desc">running processes</span></div>
-        <div class="cmd-item"><span class="cmd-code">top</span><span class="cmd-desc">process monitor</span></div>
+        <div class="cmd-group-label" data-i18n="demo.group.processes">processes</div>
+        <div class="cmd-item"><span class="cmd-code">ps</span><span class="cmd-desc" data-i18n="demo.cmd.runningProc">running processes</span></div>
+        <div class="cmd-item"><span class="cmd-code">top</span><span class="cmd-desc" data-i18n="demo.cmd.procMonitor">process monitor</span></div>
       </div>
       <div class="cmd-group">
         <div class="cmd-group-label">hardware</div>
-        <div class="cmd-item"><span class="cmd-code">cat /proc/interrupts</span><span class="cmd-desc">CLINT timer &amp; IRQs</span></div>
-        <div class="cmd-item"><span class="cmd-code">ls /bin</span><span class="cmd-desc">available binaries</span></div>
-        <div class="cmd-item"><span class="cmd-code">ls /proc</span><span class="cmd-desc">proc filesystem</span></div>
+        <div class="cmd-item"><span class="cmd-code">cat /proc/interrupts</span><span class="cmd-desc" data-i18n="demo.cmd.clint">CLINT timer &amp; IRQs</span></div>
+        <div class="cmd-item"><span class="cmd-code">ls /bin</span><span class="cmd-desc" data-i18n="demo.cmd.binaries">available binaries</span></div>
+        <div class="cmd-item"><span class="cmd-code">ls /proc</span><span class="cmd-desc" data-i18n="demo.cmd.procFs">proc filesystem</span></div>
       </div>
       <div class="cmd-group">
-        <div class="cmd-group-label">try it</div>
-        <div class="cmd-item"><span class="cmd-code">echo "hello from riscv"</span><span class="cmd-desc">it just works</span></div>
-        <div class="cmd-item"><span class="cmd-code">./coremark</span><span class="cmd-desc">CoreMark benchmark - takes a few seconds</span></div>
-        <div class="cmd-item"><span class="cmd-code">./hello_linux</span><span class="cmd-desc">hello world binary</span></div>
-        <div class="cmd-item"><span class="cmd-code">./duktapetest fizzbuzz.js</span><span class="cmd-desc">JS engine on RISC-V </span></div>
-        <div class="cmd-item"><span class="cmd-code">busybox</span><span class="cmd-desc">all available commands</span></div>
+        <div class="cmd-group-label" data-i18n="demo.group.tryit">try it</div>
+        <div class="cmd-item"><span class="cmd-code">echo "hello from riscv"</span><span class="cmd-desc" data-i18n="demo.cmd.itWorks">it just works</span></div>
+        <div class="cmd-item"><span class="cmd-code">./coremark</span><span class="cmd-desc" data-i18n="demo.cmd.coremark">CoreMark benchmark - takes a few seconds</span></div>
+        <div class="cmd-item"><span class="cmd-code">./hello_linux</span><span class="cmd-desc" data-i18n="demo.cmd.helloWorld">hello world binary</span></div>
+        <div class="cmd-item"><span class="cmd-code">./duktapetest fizzbuzz.js</span><span class="cmd-desc" data-i18n="demo.cmd.jsEngine">JS engine on RISC-V </span></div>
+        <div class="cmd-item"><span class="cmd-code">busybox</span><span class="cmd-desc" data-i18n="demo.cmd.allCmds">all available commands</span></div>
       </div>
     </div>
   </div>
@@ -162,7 +230,7 @@
 
 <section id="projects">
   <h2 class="section-title">
-    <span class="title-num">02</span> PROJECTS
+    <span class="title-num">03</span> <span data-i18n="projects.title">PROJECTS</span>
   </h2>
 
   <div class="terminal">
@@ -181,6 +249,10 @@
       <div class="status-grid">
         <div class="status-row">
           <span class="status-badge badge-ok">OK</span>
+          <span class="status-name">munehisa investment simulator</span>
+        </div>
+        <div class="status-row">
+          <span class="status-badge badge-ok">OK</span>
           <span class="status-name">risc-v rv32i emulator</span>
         </div>
         <div class="status-row">
@@ -192,20 +264,44 @@
           <span class="status-name">chip-8 emulator</span>
         </div>
         <div class="status-row">
-          <span class="status-badge badge-ok">OK</span>
-          <span class="status-name">mineinvest investment simulator</span>
-        </div>
-        <div class="status-row">
-          <span class="status-badge badge-wip">WIP</span>
-          <span class="status-name">vesta programming language</span>
-        </div>
-        <div class="status-row">
           <span class="status-badge badge-cancel">CNCL</span>
-          <span class="status-name">sil compiler — Honorable Mention</span>
+          <span class="status-name" data-i18n="projects.statusSil">sil compiler — Honorable Mention</span>
         </div>
       </div>
 
       <div class="divider-line"></div>
+
+      <!-- MUNEHISA -->
+      <div class="terminal-line">
+        <span class="t-green prompt">❯</span>
+        <span class="cmd"> info munehisa</span>
+      </div>
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-name">Munehisa Investment Simulator</span>
+          <span class="project-badge badge-ok-inline" data-i18n="projects.badgeComplete">COMPLETE</span>
+        </div>
+        <div class="project-stack">Java 21 · Spring Boot · PostgreSQL · JWT · React · TypeScript · Python · FastAPI · Docker</div>
+        <p class="project-desc" data-i18n="projects.descMunehisa">
+          Full-stack, risk-free investment simulator — create a simulation, pick a historical
+          starting month and base currency, and trade real historical market data month by month
+          against a time-traveling broker. Java 21 / Spring Boot backend with Spring Security,
+          JWT auth, JPA + PostgreSQL (Flyway-migrated schema), and Testcontainers-backed
+          integration tests running in CI. A separate Python/FastAPI service handles market-data
+          fetching; React + TypeScript frontend with an interactive D3 candlestick chart.
+          Deployed live: static frontend on GitHub Pages backed by a Spring Boot API on a
+          Hetzner Cloud VM.
+        </p>
+        <a href="https://github.com/HernaniSamuel/munehisa-investment-simulator" target="_blank" class="project-link">
+          ⇗ github.com/HernaniSamuel/munehisa-investment-simulator
+        </a>
+        <a href="https://hernanisamuel.github.io/munehisa-investment-simulator/" target="_blank" class="project-link" data-i18n="showcase.linkDemo">
+          ⇗ Live Demo
+        </a>
+        <a href="#showcase" class="project-link" data-i18n="projects.linkScreenshotsAbove">
+          ⇗ Screenshots (above)
+        </a>
+      </div>
 
       <!-- RISC-V -->
       <div class="terminal-line">
@@ -215,23 +311,26 @@
       <div class="project-card">
         <div class="project-header">
           <span class="project-name">RISC-V Emulator</span>
-          <span class="project-badge badge-ok-inline">COMPLETE</span>
+          <span class="project-badge badge-ok-inline" data-i18n="projects.badgeComplete">COMPLETE</span>
         </div>
         <div class="project-stack">Rust · WebAssembly</div>
-        <p class="project-desc">
+        <p class="project-desc" data-i18n="projects.descRiscv">
           A cycle-accurate RV32IMA emulator written in Rust — boots a real Linux 6.1 kernel
           and FreeRTOS from bare-metal ELF. Implements the full RV32IMA ISA, machine-mode
           privileged spec, CLINT timer, UART 16550, ELF loader with symbol table,
           objdump-compatible disassembler, and execution tracer.
-          Compiles to WebAssembly — the terminal above runs the kernel live in your browser.
+          Compiles to WebAssembly — see the live demo above, running the kernel in your browser.
           Inspired by and initially based on <a href="https://github.com/cnlohr/mini-rv32ima" target="_blank" class="project-link-inline">CNLohr's mini-rv32ima</a> —
           the original ~400-line C implementation that first proved the concept of booting Linux on a minimal RV32 core.
         </p>
         <a href="https://github.com/HernaniSamuel/riscv-emulator" target="_blank" class="project-link">
           ⇗ github.com/HernaniSamuel/riscv-emulator
         </a>
-        <a href="https://hernanisamuel.github.io/riscv-emulator/riscv_emulator/index.html" target="_blank" class="project-link">
+        <a href="https://hernanisamuel.github.io/riscv-emulator/riscv_emulator/index.html" target="_blank" class="project-link" data-i18n="projects.linkApiDocs">
           ⇗ API Documentation
+        </a>
+        <a href="#demo" class="project-link" data-i18n="projects.linkDemoAbove">
+          ⇗ Live Demo (above)
         </a>
       </div>
 
@@ -243,10 +342,10 @@
       <div class="project-card">
         <div class="project-header">
           <span class="project-name">CHIP-8 Interpreter</span>
-          <span class="project-badge badge-ok-inline">COMPLETE</span>
+          <span class="project-badge badge-ok-inline" data-i18n="projects.badgeComplete">COMPLETE</span>
         </div>
         <div class="project-stack">Rust</div>
-        <p class="project-desc">
+        <p class="project-desc" data-i18n="projects.descChip8">
           A Chip-8 interpreter built to learn how virtual machines work,
           including instruction decoding and ISA concepts.
         </p>
@@ -263,58 +362,15 @@
       <div class="project-card">
         <div class="project-header">
           <span class="project-name">Brainfuck Interpreter</span>
-          <span class="project-badge badge-ok-inline">COMPLETE</span>
+          <span class="project-badge badge-ok-inline" data-i18n="projects.badgeComplete">COMPLETE</span>
         </div>
         <div class="project-stack">Rust</div>
-        <p class="project-desc">
+        <p class="project-desc" data-i18n="projects.descBrainfuck">
           Brainfuck interpreter created to practice software engineering skills
           and learn Rust, interpreters, and programming language concepts.
         </p>
         <a href="https://github.com/HernaniSamuel/brainfuck" target="_blank" class="project-link">
           ⇗ github.com/HernaniSamuel/brainfuck
-        </a>
-      </div>
-
-      <!-- VESTA -->
-      <div class="terminal-line">
-        <span class="t-green prompt">❯</span>
-        <span class="cmd"> info vesta</span>
-      </div>
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-name">Vesta Programming Language</span>
-          <span class="project-badge badge-wip-inline">WIP</span>
-        </div>
-        <div class="project-stack">Rust · Claude</div>
-        <p class="project-desc">
-          Experimental concatenative programming language designed to be pure,
-          safe, high-performance and bare-metal.
-        </p>
-        <a href="https://github.com/HernaniSamuel/vesta" target="_blank" class="project-link">
-          ⇗ github.com/HernaniSamuel/vesta
-        </a>
-      </div>
-
-      <!-- MINEINVEST -->
-      <div class="terminal-line">
-        <span class="t-green prompt">❯</span>
-        <span class="cmd"> info mineinvest</span>
-      </div>
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-name">MineInvest Investment Simulator</span>
-          <span class="project-badge badge-ok-inline">COMPLETE</span>
-        </div>
-        <div class="project-stack">Python · Pandas · FastAPI · yfinance · React · Bootstrap · Lightweight Charts · Chart.js</div>
-        <p class="project-desc">
-          Investment simulator that acts as a time-traveling broker allowing
-          backtesting using Yahoo Finance historical data.
-        </p>
-        <a href="https://github.com/HernaniSamuel/MineInvest" target="_blank" class="project-link">
-          ⇗ github.com/HernaniSamuel/MineInvest
-        </a>
-        <a href="https://www.youtube.com/watch?v=ZDhVMzFO3_A" target="_blank" class="project-link">
-          ▶ youtube.com/watch?v=ZDhVMzFO3_A &nbsp;<span class="tag-ptbr">PT-BR</span>
         </a>
       </div>
 
@@ -326,11 +382,11 @@
       <div class="project-card cancelled">
         <div class="project-header">
           <span class="project-name">SIL SPIR-V Compiler</span>
-          <span class="project-badge badge-cancel-inline">CANCELLED</span>
-          <span class="honor-badge">★ HONORABLE MENTION</span>
+          <span class="project-badge badge-cancel-inline" data-i18n="projects.badgeCancelled">CANCELLED</span>
+          <span class="honor-badge" data-i18n="projects.badgeHonor">★ HONORABLE MENTION</span>
         </div>
         <div class="project-stack">Python · ChatGPT</div>
-        <p class="project-desc">
+        <p class="project-desc" data-i18n="projects.descSil">
           A programming language that compiles to SPIR-V.
           My first attempt at creating a programming language was intended to rival NVIDIA's CUDA
           (yes, I didn't really know what I was getting myself into). Never achieved true parallelism,
@@ -351,7 +407,7 @@
 
 <section id="about">
   <h2 class="section-title">
-    <span class="title-num">03</span> ABOUT ME
+    <span class="title-num">04</span> <span data-i18n="about.title">ABOUT ME</span>
   </h2>
 
   <div class="terminal">
@@ -370,26 +426,26 @@
 
       <div class="about-grid">
         <div class="about-bio">
-          <p class="bio-text">
-            Software engineer focused on low-level systems and Rust.<br>
-            Building interpreters, emulators, and tooling.
+          <p class="bio-text" data-i18n="about.bio">
+            Backend-focused software engineer building production-grade systems with Java and Spring Boot.<br>
+            Full-stack when the project calls for it — plus a parallel track in low-level systems and Rust.
           </p>
         </div>
 
         <div class="about-details">
           <div class="detail-block">
-            <div class="detail-label">INTERESTS</div>
+            <div class="detail-label" data-i18n="about.interestsLabel">INTERESTS</div>
             <div class="detail-list">
-              <span class="detail-item">Systems programming</span>
-              <span class="detail-item">Virtual machines</span>
-              <span class="detail-item">ISA design</span>
-              <span class="detail-item">Bare-metal development</span>
+              <span class="detail-item" data-i18n="about.interest1">Backend architecture</span>
+              <span class="detail-item" data-i18n="about.interest2">API design</span>
+              <span class="detail-item" data-i18n="about.interest3">Distributed systems</span>
+              <span class="detail-item" data-i18n="about.interest4">Systems programming</span>
             </div>
           </div>
 
           <div class="detail-block">
-            <div class="detail-label">CURRENT FOCUS</div>
-            <div class="focus-value">Rust</div>
+            <div class="detail-label" data-i18n="about.currentFocusLabel">CURRENT FOCUS</div>
+            <div class="focus-value">Java · Spring Boot</div>
           </div>
         </div>
       </div>
@@ -406,7 +462,7 @@
   <div class="footer-inner">
     <span class="footer-logo">HS</span>
     <span class="footer-copy">HERNANI SAMUEL DINIZ &copy; 2026</span>
-    <span class="footer-uptime"><span class="status-dot small"></span> ALL SYSTEMS OPERATIONAL</span>
+    <span class="footer-uptime"><span class="status-dot small"></span> <span data-i18n="footer.uptime">ALL SYSTEMS OPERATIONAL</span></span>
   </div>
   <div class="footer-credits">
     Linux kernel image via <a href="https://github.com/cnlohr/mini-rv32ima" target="_blank" class="footer-credit-link">mini-rv32ima</a> by <a href="https://github.com/cnlohr" target="_blank" class="footer-credit-link">CNLohr</a> &mdash; BSD/MIT/CC0
@@ -414,6 +470,239 @@
 </footer>
 
 <script>
+const I18N = {
+  en: {
+    "hero.eyebrow": '<span class="t-green blink-slow">▮</span>&nbsp;INITIALIZING PROFILE...',
+    "hero.title": "SOFTWARE<br>ENGINEER",
+    "hero.sub": 'Backend &amp; full-stack engineer building production-grade systems in Java and Spring Boot,<br>with a parallel track in low-level systems programming and Rust.',
+    "hero.resume": '<span class="btn-icon">↓</span> RESUME',
+    "showcase.title": "SHOWCASE — MUNEHISA INVESTMENT SIMULATOR",
+    "showcase.hint": "Risk-free investment simulator — trade real historical market data against a time-traveling broker.",
+    "showcase.caption1": 'Dashboard — portfolio value, positions &amp; monthly allocation',
+    "showcase.caption2": "Simulations — run multiple time-traveling scenarios in parallel",
+    "showcase.caption3": "Trade assets — interactive D3 candlestick chart over historical prices",
+    "showcase.linkDemo": "⇗ Live Demo",
+    "showcase.imgAlt1": "Munehisa dashboard showing cash balance, portfolio value, positions and allocation chart",
+    "showcase.imgAlt2": "Munehisa simulation list with two saved time-traveling simulations",
+    "showcase.imgAlt3": "Munehisa trade screen with an interactive D3 candlestick chart",
+    "showcase.ariaPrev": "Previous screenshot",
+    "showcase.ariaNext": "Next screenshot",
+    "showcase.ariaDot1": "Go to slide 1",
+    "showcase.ariaDot2": "Go to slide 2",
+    "showcase.ariaDot3": "Go to slide 3",
+    "demo.title": "LIVE DEMO — RISCV-EMULATOR LINUX",
+    "demo.hint": "Click BOOT to start the emulator in your browser — no install needed.",
+    "demo.bootNote": "~3.1 MB WASM · runs entirely in your browser",
+    "demo.resetBtn": "↺ RESET",
+    "demo.cmdPanelTitle": "// try these commands",
+    "demo.group.system": "system",
+    "demo.group.memory": "memory",
+    "demo.group.processes": "processes",
+    "demo.group.tryit": "try it",
+    "demo.cmd.noPassword": "no password",
+    "demo.cmd.kernelInfo": "kernel info",
+    "demo.cmd.cpuInfo": "RISC-V CPU info",
+    "demo.cmd.buildInfo": "build info",
+    "demo.cmd.kernelLog": "kernel log",
+    "demo.cmd.memUsage": "memory usage",
+    "demo.cmd.memDetailed": "detailed memory",
+    "demo.cmd.runningProc": "running processes",
+    "demo.cmd.procMonitor": "process monitor",
+    "demo.cmd.clint": 'CLINT timer &amp; IRQs',
+    "demo.cmd.binaries": "available binaries",
+    "demo.cmd.procFs": "proc filesystem",
+    "demo.cmd.itWorks": "it just works",
+    "demo.cmd.coremark": "CoreMark benchmark - takes a few seconds",
+    "demo.cmd.helloWorld": "hello world binary",
+    "demo.cmd.jsEngine": "JS engine on RISC-V ",
+    "demo.cmd.allCmds": "all available commands",
+    "demo.boot.idle": "BOOT LINUX",
+    "demo.boot.loading": "LOADING WASM…",
+    "demo.boot.retry": "RETRY",
+    "demo.status.idle": "READY",
+    "demo.status.booting": "BOOTING…",
+    "demo.status.running": "RUNNING",
+    "demo.status.halted": "HALTED",
+    "projects.title": "PROJECTS",
+    "projects.statusSil": "sil compiler — Honorable Mention",
+    "projects.badgeComplete": "COMPLETE",
+    "projects.badgeCancelled": "CANCELLED",
+    "projects.badgeHonor": "★ HONORABLE MENTION",
+    "projects.descMunehisa": `Full-stack, risk-free investment simulator — create a simulation, pick a historical
+          starting month and base currency, and trade real historical market data month by month
+          against a time-traveling broker. Java 21 / Spring Boot backend with Spring Security,
+          JWT auth, JPA + PostgreSQL (Flyway-migrated schema), and Testcontainers-backed
+          integration tests running in CI. A separate Python/FastAPI service handles market-data
+          fetching; React + TypeScript frontend with an interactive D3 candlestick chart.
+          Deployed live: static frontend on GitHub Pages backed by a Spring Boot API on a
+          Hetzner Cloud VM.`,
+    "projects.descRiscv": `A cycle-accurate RV32IMA emulator written in Rust — boots a real Linux 6.1 kernel
+          and FreeRTOS from bare-metal ELF. Implements the full RV32IMA ISA, machine-mode
+          privileged spec, CLINT timer, UART 16550, ELF loader with symbol table,
+          objdump-compatible disassembler, and execution tracer.
+          Compiles to WebAssembly — see the live demo above, running the kernel in your browser.
+          Inspired by and initially based on <a href="https://github.com/cnlohr/mini-rv32ima" target="_blank" class="project-link-inline">CNLohr's mini-rv32ima</a> —
+          the original ~400-line C implementation that first proved the concept of booting Linux on a minimal RV32 core.`,
+    "projects.descChip8": `A Chip-8 interpreter built to learn how virtual machines work,
+          including instruction decoding and ISA concepts.`,
+    "projects.descBrainfuck": `Brainfuck interpreter created to practice software engineering skills
+          and learn Rust, interpreters, and programming language concepts.`,
+    "projects.descSil": `A programming language that compiles to SPIR-V.
+          My first attempt at creating a programming language was intended to rival NVIDIA's CUDA
+          (yes, I didn't really know what I was getting myself into). Never achieved true parallelism,
+          but it actually works on the GPU. An honorable mention for getting this far using pure Python.`,
+    "projects.linkApiDocs": "⇗ API Documentation",
+    "projects.linkScreenshotsAbove": "⇗ Screenshots (above)",
+    "projects.linkDemoAbove": "⇗ Live Demo (above)",
+    "about.title": "ABOUT ME",
+    "about.bio": 'Backend-focused software engineer building production-grade systems with Java and Spring Boot.<br>Full-stack when the project calls for it — plus a parallel track in low-level systems and Rust.',
+    "about.interestsLabel": "INTERESTS",
+    "about.currentFocusLabel": "CURRENT FOCUS",
+    "about.interest1": "Backend architecture",
+    "about.interest2": "API design",
+    "about.interest3": "Distributed systems",
+    "about.interest4": "Systems programming",
+    "footer.uptime": "ALL SYSTEMS OPERATIONAL",
+    "email.copied": "COPIED",
+  },
+  pt: {
+    "hero.eyebrow": '<span class="t-green blink-slow">▮</span>&nbsp;INICIALIZANDO PERFIL...',
+    "hero.title": "ENGENHEIRO<br>DE SOFTWARE",
+    "hero.sub": 'Engenheiro backend e full-stack construindo sistemas de nível profissional em Java e Spring Boot,<br>com uma trilha paralela em programação de sistemas de baixo nível e Rust.',
+    "hero.resume": '<span class="btn-icon">↓</span> CURRÍCULO',
+    "showcase.title": "VITRINE — MUNEHISA INVESTMENT SIMULATOR",
+    "showcase.hint": "Simulador de investimentos sem risco — negocie dados reais do mercado histórico contra uma corretora que viaja no tempo.",
+    "showcase.caption1": 'Painel — valor da carteira, posições e alocação mensal',
+    "showcase.caption2": "Simulações — rode vários cenários de viagem no tempo em paralelo",
+    "showcase.caption3": "Negociar ativos — gráfico de candlestick interativo em D3 sobre preços históricos",
+    "showcase.linkDemo": "⇗ Demonstração ao vivo",
+    "showcase.imgAlt1": "Painel do Munehisa mostrando saldo em caixa, valor da carteira, posições e gráfico de alocação",
+    "showcase.imgAlt2": "Lista de simulações do Munehisa com duas simulações de viagem no tempo salvas",
+    "showcase.imgAlt3": "Tela de negociação do Munehisa com gráfico de candlestick interativo em D3",
+    "showcase.ariaPrev": "Captura anterior",
+    "showcase.ariaNext": "Próxima captura",
+    "showcase.ariaDot1": "Ir para o slide 1",
+    "showcase.ariaDot2": "Ir para o slide 2",
+    "showcase.ariaDot3": "Ir para o slide 3",
+    "demo.title": "DEMONSTRAÇÃO AO VIVO — RISCV-EMULATOR LINUX",
+    "demo.hint": "Clique em INICIAR para rodar o emulador no seu navegador — sem precisar instalar nada.",
+    "demo.bootNote": "~3.1 MB de WASM · roda inteiramente no seu navegador",
+    "demo.resetBtn": "↺ REINICIAR",
+    "demo.cmdPanelTitle": "// experimente estes comandos",
+    "demo.group.system": "sistema",
+    "demo.group.memory": "memória",
+    "demo.group.processes": "processos",
+    "demo.group.tryit": "experimente",
+    "demo.cmd.noPassword": "sem senha",
+    "demo.cmd.kernelInfo": "informações do kernel",
+    "demo.cmd.cpuInfo": "informações da CPU RISC-V",
+    "demo.cmd.buildInfo": "informações de build",
+    "demo.cmd.kernelLog": "log do kernel",
+    "demo.cmd.memUsage": "uso de memória",
+    "demo.cmd.memDetailed": "memória detalhada",
+    "demo.cmd.runningProc": "processos em execução",
+    "demo.cmd.procMonitor": "monitor de processos",
+    "demo.cmd.clint": 'timer CLINT e IRQs',
+    "demo.cmd.binaries": "binários disponíveis",
+    "demo.cmd.procFs": "sistema de arquivos proc",
+    "demo.cmd.itWorks": "simplesmente funciona",
+    "demo.cmd.coremark": "benchmark CoreMark — leva alguns segundos",
+    "demo.cmd.helloWorld": "binário hello world",
+    "demo.cmd.jsEngine": "motor JS rodando em RISC-V ",
+    "demo.cmd.allCmds": "todos os comandos disponíveis",
+    "demo.boot.idle": "INICIAR LINUX",
+    "demo.boot.loading": "CARREGANDO WASM…",
+    "demo.boot.retry": "TENTAR NOVAMENTE",
+    "demo.status.idle": "PRONTO",
+    "demo.status.booting": "INICIANDO…",
+    "demo.status.running": "RODANDO",
+    "demo.status.halted": "PARADO",
+    "projects.title": "PROJETOS",
+    "projects.statusSil": "sil compiler — Menção Honrosa",
+    "projects.badgeComplete": "COMPLETO",
+    "projects.badgeCancelled": "CANCELADO",
+    "projects.badgeHonor": "★ MENÇÃO HONROSA",
+    "projects.descMunehisa": `Simulador de investimentos full-stack e sem risco — crie uma simulação, escolha um mês
+          inicial histórico e uma moeda base, e negocie dados reais do mercado mês a mês contra
+          uma corretora que viaja no tempo. Backend em Java 21 / Spring Boot com Spring Security,
+          autenticação JWT, JPA + PostgreSQL (schema migrado com Flyway) e testes de integração
+          com Testcontainers rodando em CI. Um serviço separado em Python/FastAPI cuida da busca
+          de dados de mercado; frontend em React + TypeScript com gráfico de candlestick interativo
+          em D3. Em produção: frontend estático no GitHub Pages, com API Spring Boot rodando numa
+          VM da Hetzner Cloud.`,
+    "projects.descRiscv": `Um emulador RV32IMA ciclo-preciso escrito em Rust — inicializa um kernel Linux 6.1
+          real e o FreeRTOS a partir de ELF bare-metal. Implementa toda a ISA RV32IMA, a
+          especificação privilegiada machine-mode, timer CLINT, UART 16550, carregador de ELF
+          com tabela de símbolos, disassembler compatível com objdump e um tracer de execução.
+          Compila para WebAssembly — veja a demonstração ao vivo acima, rodando o kernel no seu
+          navegador. Inspirado e inicialmente baseado no <a href="https://github.com/cnlohr/mini-rv32ima" target="_blank" class="project-link-inline">mini-rv32ima do CNLohr</a> —
+          a implementação original de ~400 linhas em C que primeiro provou o conceito de
+          inicializar Linux num núcleo RV32 mínimo.`,
+    "projects.descChip8": `Um interpretador de Chip-8 construído para aprender como máquinas virtuais
+          funcionam, incluindo decodificação de instruções e conceitos de ISA.`,
+    "projects.descBrainfuck": `Interpretador de Brainfuck criado para praticar habilidades de engenharia
+          de software e aprender Rust, interpretadores e conceitos de linguagens de programação.`,
+    "projects.descSil": `Uma linguagem de programação que compila para SPIR-V.
+          Minha primeira tentativa de criar uma linguagem de programação pretendia rivalizar com
+          a CUDA da NVIDIA (é, eu realmente não sabia no que estava me metendo). Nunca alcançou
+          paralelismo de verdade, mas de fato funciona na GPU. Uma menção honrosa por ter chegado
+          até aqui usando Python puro.`,
+    "projects.linkApiDocs": "⇗ Documentação da API",
+    "projects.linkScreenshotsAbove": "⇗ Capturas de tela (acima)",
+    "projects.linkDemoAbove": "⇗ Demonstração ao vivo (acima)",
+    "about.title": "SOBRE MIM",
+    "about.bio": 'Engenheiro de software focado em backend, construindo sistemas de nível profissional com Java e Spring Boot.<br>Full-stack quando o projeto pede — além de uma trilha paralela em sistemas de baixo nível e Rust.',
+    "about.interestsLabel": "INTERESSES",
+    "about.currentFocusLabel": "FOCO ATUAL",
+    "about.interest1": "Arquitetura backend",
+    "about.interest2": "Design de APIs",
+    "about.interest3": "Sistemas distribuídos",
+    "about.interest4": "Programação de sistemas",
+    "footer.uptime": "TODOS OS SISTEMAS OPERACIONAIS",
+    "email.copied": "COPIADO",
+  },
+};
+window.I18N = I18N;
+
+const RESUME_FILES = { en: "Hernani_Diniz_Resume.pdf", pt: "Hernani_Diniz_Curriculo_PT-BR.pdf" };
+
+function detectLang() {
+  const saved = localStorage.getItem("lang");
+  if (saved === "en" || saved === "pt") return saved;
+  return (navigator.language || "").toLowerCase().startsWith("pt") ? "pt" : "en";
+}
+
+function applyLang(lang) {
+  window.currentLang = lang;
+  localStorage.setItem("lang", lang);
+  document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const val = I18N[lang][el.dataset.i18n];
+    if (val !== undefined) el.innerHTML = val;
+  });
+  document.querySelectorAll("[data-i18n-alt]").forEach(el => {
+    const val = I18N[lang][el.dataset.i18nAlt];
+    if (val !== undefined) el.alt = val;
+  });
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => {
+    const val = I18N[lang][el.dataset.i18nAria];
+    if (val !== undefined) el.setAttribute("aria-label", val);
+  });
+  document.querySelectorAll(".lang-btn").forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
+
+  const resumeLink = document.getElementById("resume-link");
+  if (resumeLink) resumeLink.href = RESUME_FILES[lang];
+
+  document.dispatchEvent(new CustomEvent("langchange", { detail: { lang } }));
+}
+
+document.querySelectorAll(".lang-btn").forEach(btn => {
+  btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+});
+
+applyLang(detectLang());
+
 const emailBtn = document.getElementById("email-btn");
 const email = "hernanisamuel0@gmail.com";
 
@@ -421,7 +710,7 @@ emailBtn.addEventListener("click", async (e) => {
   e.preventDefault();
   try {
     await navigator.clipboard.writeText(email);
-    emailBtn.innerHTML = '<span class="btn-icon">✓</span> COPIED';
+    emailBtn.innerHTML = `<span class="btn-icon">✓</span> ${I18N[window.currentLang]["email.copied"]}`;
     emailBtn.classList.add("copied");
     setTimeout(() => {
       emailBtn.innerHTML = '<span class="btn-icon">✉</span> EMAIL';
@@ -442,6 +731,43 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 document.querySelectorAll('.project-card, .about-grid').forEach(el => observer.observe(el));
+
+// Munehisa screenshot carousel
+(function() {
+  const carousel = document.getElementById('munehisa-carousel');
+  const track    = document.getElementById('carousel-track');
+  if (!carousel || !track) return;
+
+  const dots    = carousel.querySelectorAll('.carousel-dot');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+  const slideCount = track.children.length;
+  let index = 0;
+
+  function goTo(i) {
+    index = (i + slideCount) % slideCount;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d, di) => d.classList.toggle('active', di === index));
+  }
+
+  prevBtn.addEventListener('click', () => goTo(index - 1));
+  nextBtn.addEventListener('click', () => goTo(index + 1));
+  dots.forEach(d => d.addEventListener('click', () => goTo(parseInt(d.dataset.index, 10))));
+
+  let startX = null;
+  const wrap = track.parentElement;
+  wrap.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  wrap.addEventListener('touchend', e => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) goTo(index + (dx < 0 ? 1 : -1));
+    startX = null;
+  });
+
+  let autoplay = setInterval(() => goTo(index + 1), 5000);
+  carousel.addEventListener('mouseenter', () => clearInterval(autoplay));
+  carousel.addEventListener('mouseleave', () => { autoplay = setInterval(() => goTo(index + 1), 5000); });
+})();
 </script>
 <!-- xterm.js CSS — inline para evitar border injetada pela CDN -->
 <style>
@@ -481,15 +807,28 @@ document.querySelectorAll('.project-card, .about-grid').forEach(el => observer.o
 
   let term, fitAddon, emulator, rafId, running = false;
   let ipsAccum = 0, ipsFrames = 0, lastPerfTs = performance.now();
+  let bootLabelState = 'idle';
+  let demoStatusState = 'idle';
 
   const BATCH     = 50_000;   // instructions per step — smaller = more responsive
   const FRAME_MS  = 12;       // max ms to spend per frame before yielding to browser
 
-  function setStatus(state) {
-    statusDot.className = 'demo-dot demo-dot-' + state;
-    const labels = { idle: 'READY', booting: 'BOOTING…', running: 'RUNNING', halted: 'HALTED' };
-    statusText.textContent = labels[state] ?? state.toUpperCase();
+  function bootLabelHtml(state) {
+    const icons = { idle: '▶', loading: '▮', retry: '▶' };
+    const cls = state === 'loading' ? ' blink-slow' : '';
+    return `<span class="boot-btn-icon${cls}">${icons[state]}</span> ${window.I18N[window.currentLang]['demo.boot.' + state]}`;
   }
+
+  function setStatus(state) {
+    demoStatusState = state;
+    statusDot.className = 'demo-dot demo-dot-' + state;
+    statusText.textContent = window.I18N[window.currentLang]['demo.status.' + state];
+  }
+
+  document.addEventListener('langchange', () => {
+    bootBtn.innerHTML = bootLabelHtml(bootLabelState);
+    setStatus(demoStatusState);
+  });
 
   function initTerm() {
     if (term) { term.dispose(); }
@@ -559,7 +898,8 @@ document.querySelectorAll('.project-card, .about-grid').forEach(el => observer.o
 
   async function boot() {
     bootBtn.disabled = true;
-    bootBtn.innerHTML = '<span class="boot-btn-icon blink-slow">▮</span> LOADING WASM…';
+    bootLabelState = 'loading';
+    bootBtn.innerHTML = bootLabelHtml('loading');
     setStatus('booting');
 
     try {
@@ -568,7 +908,8 @@ document.querySelectorAll('.project-card, .about-grid').forEach(el => observer.o
     } catch(e) {
       console.error(e);
       bootBtn.disabled = false;
-      bootBtn.innerHTML = '<span class="boot-btn-icon">▶</span> RETRY';
+      bootLabelState = 'retry';
+      bootBtn.innerHTML = bootLabelHtml('retry');
       setStatus('idle');
       return;
     }
@@ -616,7 +957,7 @@ document.querySelectorAll('.project-card, .about-grid').forEach(el => observer.o
       } else if (emulator.is_fault()) {
         running = false;
         setStatus('halted');
-        term.write('\r\n\x1b[31m[ FAULT \u2014 emulator halted ]\x1b[0m\r\n');
+        term.write('\r\n\x1b[31m[ FAULT — emulator halted ]\x1b[0m\r\n');
       } else {
         running = false;
         setStatus('halted');
@@ -634,7 +975,8 @@ document.querySelectorAll('.project-card, .about-grid').forEach(el => observer.o
     resetBtn.disabled = true;
     overlay.style.display = '';
     bootBtn.disabled = false;
-    bootBtn.innerHTML = '<span class="boot-btn-icon">▶</span> BOOT LINUX';
+    bootLabelState = 'idle';
+    bootBtn.innerHTML = bootLabelHtml('idle');
     setStatus('idle');
   }
 
